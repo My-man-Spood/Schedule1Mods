@@ -9,3 +9,9 @@ This mod uses MelonLoader version 0.7.0. I have no idea if it works with older v
 
 ## Configuration
 The trash can radius can be configured through MelonLoader's preferences. Find the preferences in the game's root directory > UserData > MelonPreferences.cfg. After running the game once there should be a section in there called [Spood_LargerTrashRadius]. just change the radius' value to whatever you want. It should be 5.5 by default, the game's usual radius is 4.
+
+**before**
+![image](https://i.imgur.com/1QlJ1S1.jpeg)
+
+**after**
+![image](https://i.imgur.com/YQJVhY5.jpeg)

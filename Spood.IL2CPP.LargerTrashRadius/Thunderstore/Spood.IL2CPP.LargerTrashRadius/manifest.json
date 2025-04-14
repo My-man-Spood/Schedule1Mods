@@ -1,7 +1,7 @@
 {
 	"name":"Spoods_IL2CPP_Larger_Trash_Can_Radius",
 	"description": "Increases the radius of trash cans so that cleaners can pick up trash from a bit further away.",
-	"version_number": "1.0.0",
+	"version_number": "1.0.1",
 	"dependencies": [],
 	"website_url": "https://github.com/My-man-Spood/Schedule1Mods"
 }
