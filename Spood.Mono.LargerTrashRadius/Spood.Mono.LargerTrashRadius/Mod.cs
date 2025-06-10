@@ -1,6 +1,6 @@
 ﻿using MelonLoader;
 
-[assembly: MelonInfo(typeof(Spood.Mono.LargerTrashRadius.Mod), "Spood.Mono.LargerTrashRadius", "1.0.0", "Spood", null)]
+[assembly: MelonInfo(typeof(Spood.Mono.LargerTrashRadius.Mod), "Spood.Mono.LargerTrashRadius", "1.1.0", "Spood", null)]
 [assembly: MelonGame("TVGS", "Schedule I")]
 namespace Spood.Mono.LargerTrashRadius;
 

@@ -16,7 +16,7 @@ public class PickupRadiusPatch
         var radius = cat.GetEntry<float>(Mod.PreferencesRadiusEntryName).Value;
 
         // patch trash can radius
-        var propertyInfo = __instance.GetType().GetProperty("PickupRadius", BindingFlags.Public | BindingFlags.Instance);
+        var propertyInfo = __instance.GetType().GetProperty("PickupSquareWidth", BindingFlags.Public | BindingFlags.Instance);
         propertyInfo.SetValue(__instance, radius);
     }
 }
