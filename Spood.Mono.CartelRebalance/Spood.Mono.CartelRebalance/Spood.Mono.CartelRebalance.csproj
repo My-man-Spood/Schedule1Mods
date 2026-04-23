@@ -465,6 +465,10 @@
 
 	</ItemGroup>
 
+	<ItemGroup>
+		<ProjectReference Include="..\..\Spood.Mono.Core\Spood.Mono.Core\Spood.Mono.Core.csproj" />
+	</ItemGroup>
+
 	<PropertyGroup>
 		<AllowUnsafeBlocks>True</AllowUnsafeBlocks>
 		<EnableDefaultCompileItems>false</EnableDefaultCompileItems>

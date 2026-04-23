@@ -1,4 +1,5 @@
 ﻿using MelonLoader;
+using Spood.Mono.Core;
 
 [assembly: MelonInfo(typeof(Spood.Mono.LargerTrashRadius.Mod), "Spood.Mono.LargerTrashRadius", "1.1.0", "Spood", null)]
 [assembly: MelonGame("TVGS", "Schedule I")]
@@ -18,10 +19,7 @@ public class Mod : MelonMod
     private void SetupPreferences()
     {
         var cat = MelonPreferences.CreateCategory(PreferencesCategory);
-        if(cat.GetEntry(PreferencesRadiusEntryName) == null)
-        {
-            cat.CreateEntry<float>(PreferencesRadiusEntryName, 5.5f);
-            cat.SaveToFile();
-        }
+        cat.SetDefault(PreferencesRadiusEntryName, 5.5f);
+        cat.SaveToFile();
     }
 }

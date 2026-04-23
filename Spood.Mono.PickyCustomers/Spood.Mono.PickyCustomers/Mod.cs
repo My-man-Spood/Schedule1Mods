@@ -2,6 +2,7 @@
 using System.Globalization;
 using AeLa.EasyFeedback.APIs;
 using MelonLoader;
+using Spood.Mono.Core;
 
 [assembly: MelonInfo(typeof(Spood.Mono.PickyCustomers.Mod), "Spood.Mono.PickyCustomers", "1.0.0", "Spood", null)]
 [assembly: MelonGame("TVGS", "Schedule I")]

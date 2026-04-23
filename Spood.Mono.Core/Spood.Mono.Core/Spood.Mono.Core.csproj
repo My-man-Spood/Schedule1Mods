@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>netstandard2.1</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>disable</Nullable>
+		<RootNamespace>Spood.Mono.Core</RootNamespace>
+		<LangVersion>latest</LangVersion>
+		<IsPackable>false</IsPackable>
+		<AssemblyName>Spood.Mono.Core</AssemblyName>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Reference Include="MelonLoader">
+			<HintPath>$(Schedule1MonoMelonLoaderNet35Dir)\MelonLoader.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+		<Exec Command="COPY &quot;$(TargetPath)&quot; &quot;$(Schedule1MonoModsDir)&quot;" />
+	</Target>
+</Project>
