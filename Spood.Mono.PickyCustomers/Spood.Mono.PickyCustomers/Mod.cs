@@ -21,7 +21,6 @@ public class Mod : MelonMod
     {
         SetupPreferences();
         LoggerInstance.Msg("Initialized.");
-        HarmonyInstance.PatchAll();
     }
 
     private void SetupPreferences()

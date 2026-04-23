@@ -1,3 +1,4 @@
+using System;
 using HarmonyLib;
 using MelonLoader;
 using ScheduleOne.Economy;
@@ -8,6 +9,7 @@ using UnityEngine;
 namespace Spood.Mono.PickyCustomers
 {
     [HarmonyPatch(typeof(Customer), "GetProductEnjoyment")]
+    [HarmonyPatch(new[] { typeof(ProductDefinition), typeof(EQuality) })]
     public static class GetProductEnjoymentPatch
     {
         public static string lastDrugChecked = "";

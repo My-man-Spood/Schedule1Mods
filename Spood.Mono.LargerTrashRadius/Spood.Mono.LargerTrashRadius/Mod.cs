@@ -13,7 +13,6 @@ public class Mod : MelonMod
     {
         LoggerInstance.Msg("Spood.Mono.LargerTrashRadius Initialized");
         SetupPreferences();
-        HarmonyInstance.PatchAll();
     }
 
     private void SetupPreferences()

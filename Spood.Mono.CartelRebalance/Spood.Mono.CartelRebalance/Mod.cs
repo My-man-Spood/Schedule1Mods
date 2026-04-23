@@ -9,6 +9,6 @@ public class Mod : MelonMod
     public override void OnInitializeMelon()
     {
         LoggerInstance.Msg("Spood.Mono.CartelRebalance Initialized");
-        HarmonyInstance.PatchAll();
+        CartelInfluenceConfig.Initialize();
     }
 }

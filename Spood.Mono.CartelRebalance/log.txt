@@ -1,0 +1,13 @@
+[02:42:50.696] Support Module Loaded: C:\Spood\backup\schedule1Mono\Schedule I\MelonLoader\Dependencies\SupportModules\Mono.dll
+[02:42:50.708] [Spood.Mono.CartelRebalance] [CartelRebalance] ScheduleOne.Graffiti.WorldSpraySurface.CleanGraffiti: replaced 1 occurrence(s) of -0.05 with RemoveCartelGraffitiPlayerDelta
+[02:42:50.712] [Spood.Mono.CartelRebalance] [CartelRebalance] ScheduleOne.NPCs.Behaviour.GraffitiBehaviour.Disable: replaced 1 occurrence(s) of -0.1 with RemoveCartelGraffitiNpcInterruptedDelta
+[02:42:50.716] [Spood.Mono.CartelRebalance] [CartelRebalance] Ambush patch: targeting 1 method(s): MoveNext
+[02:42:50.718] [Spood.Mono.CartelRebalance] [CartelRebalance] ScheduleOne.Cartel.Ambush+<>c__DisplayClass12_0+<<SpawnAmbush>g__MonitorAmbush|0>d.MoveNext: replaced 1 occurrence(s) of -0.1 with AmbushClearedDelta
+[02:42:50.720] [Spood.Mono.CartelRebalance] [CartelRebalance] ScheduleOne.Cartel.CartelDealer.DiedOrKnockedOut: replaced 1 occurrence(s) of -0.1 with CartelDealerDefeatedDelta
+[02:42:50.724] [Spood.Mono.CartelRebalance] [CartelRebalance] ScheduleOne.Economy.Customer.OnCustomerUnlocked: replaced 1 occurrence(s) of -0.075 with NewCustomerUnlockedDelta
+[02:42:50.735] [Spood.Mono.CartelRebalance] Spood.Mono.CartelRebalance Initialized
+[02:42:50.742] [Spood.Mono.CartelRebalance] MelonPreferences Saved to C:\Spood\backup\schedule1Mono\Schedule I\UserData\MelonPreferences.cfg
+[02:42:50.743] [Spood.Mono.LargerTrashRadius] Spood.Mono.LargerTrashRadius Initialized
+[02:42:50.743] [Spood.Mono.LargerTrashRadius] MelonPreferences Saved to C:\Spood\backup\schedule1Mono\Schedule I\UserData\MelonPreferences.cfg
+[02:42:50.746] [Spood.Mono.PickyCustomers] MelonPreferences Saved to C:\Spood\backup\schedule1Mono\Schedule I\UserData\MelonPreferences.cfg
+[02:42:50.746] [Spood.Mono.PickyCustomers] Initialized.
