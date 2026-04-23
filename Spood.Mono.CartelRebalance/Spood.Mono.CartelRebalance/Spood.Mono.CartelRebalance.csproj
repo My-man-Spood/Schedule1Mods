@@ -472,6 +472,490 @@
 
 	<ItemGroup>
 		<Compile Include="Mod.cs" />
+		<Compile Include="PickupRadiusPatch.cs" />
+	</ItemGroup>
+	
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+		<Exec Command="COPY &quot;$(TargetPath)&quot; &quot;$(Schedule1MonoModsDir)&quot;" />
+	</Target>
+</Project>
+
+
+
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>netstandard2.1</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>disable</Nullable>
+		<RootNamespace>Spood.Mono.CartelRebalance</RootNamespace>
+		<LangVersion>default</LangVersion>
+		<IsPackable>false</IsPackable>
+		<AssemblyVersion>1.0.0.0</AssemblyVersion>
+		<FileVersion>1.0.0.0</FileVersion>
+		<NeutralLanguage>en-US</NeutralLanguage>
+		<AssemblyName>Spood.Mono.CartelRebalance</AssemblyName>
+		<LangVersion>latest</LangVersion>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Reference Include="AeLa.EasyFeedback.Demo">
+			<HintPath>$(Schedule1MonoManagedDir)\AeLa.EasyFeedback.Demo.dll</HintPath>
+		</Reference>
+		<Reference Include="AeLa.EasyFeedback">
+			<HintPath>$(Schedule1MonoManagedDir)\AeLa.EasyFeedback.dll</HintPath>
+		</Reference>
+		<Reference Include="AeLa.EasyFeedback.InputSystemSupport">
+			<HintPath>$(Schedule1MonoManagedDir)\AeLa.EasyFeedback.InputSystemSupport.dll</HintPath>
+		</Reference>
+		<Reference Include="AmplifyImpostors">
+			<HintPath>$(Schedule1MonoManagedDir)\AmplifyImpostors.dll</HintPath>
+		</Reference>
+		<Reference Include="AmplifyImpostors.Runtime">
+			<HintPath>$(Schedule1MonoManagedDir)\AmplifyImpostors.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="Assembly-CSharp-firstpass">
+			<HintPath>$(Schedule1MonoManagedDir)\Assembly-CSharp-firstpass.dll</HintPath>
+		</Reference>
+		<Reference Include="Assembly-CSharp">
+			<HintPath>$(Schedule1MonoManagedDir)\Assembly-CSharp.dll</HintPath>
+		</Reference>
+		<Reference Include="AstarPathfindingProject">
+			<HintPath>$(Schedule1MonoManagedDir)\AstarPathfindingProject.dll</HintPath>
+		</Reference>
+		<Reference Include="Autodesk.Fbx">
+			<HintPath>$(Schedule1MonoManagedDir)\Autodesk.Fbx.dll</HintPath>
+		</Reference>
+		<Reference Include="Boxophobic.AtmosphericHeightFog.Runtime">
+			<HintPath>$(Schedule1MonoManagedDir)\Boxophobic.AtmosphericHeightFog.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="Boxophobic.Utils.Scripts">
+			<HintPath>$(Schedule1MonoManagedDir)\Boxophobic.Utils.Scripts.dll</HintPath>
+		</Reference>
+		<Reference Include="Cinemachine">
+			<HintPath>$(Schedule1MonoManagedDir)\Cinemachine.dll</HintPath>
+		</Reference>
+		<Reference Include="com.rlabrecque.steamworks.net">
+			<HintPath>$(Schedule1MonoManagedDir)\com.rlabrecque.steamworks.net.dll</HintPath>
+		</Reference>
+		<Reference Include="CorgiGodRays">
+			<HintPath>$(Schedule1MonoManagedDir)\CorgiGodRays.dll</HintPath>
+		</Reference>
+		<Reference Include="EasyButtons">
+			<HintPath>$(Schedule1MonoManagedDir)\EasyButtons.dll</HintPath>
+		</Reference>
+		<Reference Include="Edgegap">
+			<HintPath>$(Schedule1MonoManagedDir)\Edgegap.dll</HintPath>
+		</Reference>
+		<Reference Include="FbxBuildTestAssets">
+			<HintPath>$(Schedule1MonoManagedDir)\FbxBuildTestAssets.dll</HintPath>
+		</Reference>
+		<Reference Include="FishNet.CodeAnalysis">
+			<HintPath>$(Schedule1MonoManagedDir)\FishNet.CodeAnalysis.dll</HintPath>
+		</Reference>
+		<Reference Include="FishNet.Demos">
+			<HintPath>$(Schedule1MonoManagedDir)\FishNet.Demos.dll</HintPath>
+		</Reference>
+		<Reference Include="FishNet.Runtime">
+			<HintPath>$(Schedule1MonoManagedDir)\FishNet.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="GameKit.Dependencies">
+			<HintPath>$(Schedule1MonoManagedDir)\GameKit.Dependencies.dll</HintPath>
+		</Reference>
+		<Reference Include="GameKit.Utilities">
+			<HintPath>$(Schedule1MonoManagedDir)\GameKit.Utilities.dll</HintPath>
+		</Reference>
+		<Reference Include="HBAO.Demo.Runtime">
+			<HintPath>$(Schedule1MonoManagedDir)\HBAO.Demo.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="HBAO.Demo.Universal.Runtime">
+			<HintPath>$(Schedule1MonoManagedDir)\HBAO.Demo.Universal.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="HBAO.Runtime">
+			<HintPath>$(Schedule1MonoManagedDir)\HBAO.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="HBAO.Universal.Runtime">
+			<HintPath>$(Schedule1MonoManagedDir)\HBAO.Universal.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="HSVPicker">
+			<HintPath>$(Schedule1MonoManagedDir)\HSVPicker.dll</HintPath>
+		</Reference>
+		<Reference Include="LokoSolo.PinchableScrollRect">
+			<HintPath>$(Schedule1MonoManagedDir)\LokoSolo.PinchableScrollRect.dll</HintPath>
+		</Reference>
+		<Reference Include="Newtonsoft.Json">
+			<HintPath>$(Schedule1MonoManagedDir)\Newtonsoft.Json.dll</HintPath>
+		</Reference>
+		<Reference Include="Pathfinding.ClipperLib">
+			<HintPath>$(Schedule1MonoManagedDir)\Pathfinding.ClipperLib.dll</HintPath>
+		</Reference>
+		<Reference Include="Pathfinding.Ionic.Zip.Reduced">
+			<HintPath>$(Schedule1MonoManagedDir)\Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
+		</Reference>
+		<Reference Include="Pathfinding.Poly2Tri">
+			<HintPath>$(Schedule1MonoManagedDir)\Pathfinding.Poly2Tri.dll</HintPath>
+		</Reference>
+		<Reference Include="RadiantGI">
+			<HintPath>$(Schedule1MonoManagedDir)\RadiantGI.dll</HintPath>
+		</Reference>
+		<Reference Include="RootMotion">
+			<HintPath>$(Schedule1MonoManagedDir)\RootMotion.dll</HintPath>
+		</Reference>
+		<Reference Include="RuntimePreviewGenerator.Runtime">
+			<HintPath>$(Schedule1MonoManagedDir)\RuntimePreviewGenerator.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="sc.stylizedgrass.runtime">
+			<HintPath>$(Schedule1MonoManagedDir)\sc.stylizedgrass.runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="sc.stylizedwater2.runtime">
+			<HintPath>$(Schedule1MonoManagedDir)\sc.stylizedwater2.runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="StylizedWaterForURP">
+			<HintPath>$(Schedule1MonoManagedDir)\StylizedWaterForURP.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.AI.Navigation">
+			<HintPath>$(Schedule1MonoManagedDir)\Unity.AI.Navigation.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Burst">
+			<HintPath>$(Schedule1MonoManagedDir)\Unity.Burst.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Burst.Unsafe">
+			<HintPath>$(Schedule1MonoManagedDir)\Unity.Burst.Unsafe.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Collections">
+			<HintPath>$(Schedule1MonoManagedDir)\Unity.Collections.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Collections.LowLevel.ILSupport">
+			<HintPath>$(Schedule1MonoManagedDir)\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Formats.Fbx.Runtime">
+			<HintPath>$(Schedule1MonoManagedDir)\Unity.Formats.Fbx.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.InputSystem">
+			<HintPath>$(Schedule1MonoManagedDir)\Unity.InputSystem.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.InputSystem.ForUI">
+			<HintPath>$(Schedule1MonoManagedDir)\Unity.InputSystem.ForUI.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.InputSystem.RebindingUI">
+			<HintPath>$(Schedule1MonoManagedDir)\Unity.InputSystem.RebindingUI.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Mathematics">
+			<HintPath>$(Schedule1MonoManagedDir)\Unity.Mathematics.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.MemoryProfiler">
+			<HintPath>$(Schedule1MonoManagedDir)\Unity.MemoryProfiler.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Postprocessing.Runtime">
+			<HintPath>$(Schedule1MonoManagedDir)\Unity.Postprocessing.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.ProGrids">
+			<HintPath>$(Schedule1MonoManagedDir)\Unity.ProGrids.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
+			<HintPath>$(Schedule1MonoManagedDir)\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.RenderPipelines.Core.Runtime">
+			<HintPath>$(Schedule1MonoManagedDir)\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
+			<HintPath>$(Schedule1MonoManagedDir)\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
+			<HintPath>$(Schedule1MonoManagedDir)\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.RenderPipelines.Universal.Config.Runtime">
+			<HintPath>$(Schedule1MonoManagedDir)\Unity.RenderPipelines.Universal.Config.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.RenderPipelines.Universal.Runtime">
+			<HintPath>$(Schedule1MonoManagedDir)\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.RenderPipelines.Universal.Shaders">
+			<HintPath>$(Schedule1MonoManagedDir)\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Services.Analytics">
+			<HintPath>$(Schedule1MonoManagedDir)\Unity.Services.Analytics.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Services.CloudDiagnostics">
+			<HintPath>$(Schedule1MonoManagedDir)\Unity.Services.CloudDiagnostics.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Services.Core.Analytics">
+			<HintPath>$(Schedule1MonoManagedDir)\Unity.Services.Core.Analytics.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Services.Core.Configuration">
+			<HintPath>$(Schedule1MonoManagedDir)\Unity.Services.Core.Configuration.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Services.Core.Device">
+			<HintPath>$(Schedule1MonoManagedDir)\Unity.Services.Core.Device.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Services.Core">
+			<HintPath>$(Schedule1MonoManagedDir)\Unity.Services.Core.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Services.Core.Environments">
+			<HintPath>$(Schedule1MonoManagedDir)\Unity.Services.Core.Environments.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Services.Core.Environments.Internal">
+			<HintPath>$(Schedule1MonoManagedDir)\Unity.Services.Core.Environments.Internal.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Services.Core.Internal">
+			<HintPath>$(Schedule1MonoManagedDir)\Unity.Services.Core.Internal.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Services.Core.Networking">
+			<HintPath>$(Schedule1MonoManagedDir)\Unity.Services.Core.Networking.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Services.Core.Registration">
+			<HintPath>$(Schedule1MonoManagedDir)\Unity.Services.Core.Registration.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Services.Core.Scheduler">
+			<HintPath>$(Schedule1MonoManagedDir)\Unity.Services.Core.Scheduler.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Services.Core.Telemetry">
+			<HintPath>$(Schedule1MonoManagedDir)\Unity.Services.Core.Telemetry.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Services.Core.Threading">
+			<HintPath>$(Schedule1MonoManagedDir)\Unity.Services.Core.Threading.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.TerrainTools">
+			<HintPath>$(Schedule1MonoManagedDir)\Unity.TerrainTools.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.TextMeshPro">
+			<HintPath>$(Schedule1MonoManagedDir)\Unity.TextMeshPro.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.Timeline">
+			<HintPath>$(Schedule1MonoManagedDir)\Unity.Timeline.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.AccessibilityModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.AccessibilityModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.AIModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.AIModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.AndroidJNIModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.AndroidJNIModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.AnimationModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.AnimationModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.ARModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.ARModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.AssetBundleModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.AssetBundleModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.AudioModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.AudioModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.ClothModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.ClothModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.ClusterInputModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.ClusterInputModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.ClusterRendererModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.ClusterRendererModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.ContentLoadModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.ContentLoadModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.CoreModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.CoreModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.CrashReportingModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.CrashReportingModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.DirectorModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.DirectorModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.DSPGraphModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.DSPGraphModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.GameCenterModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.GameCenterModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.GIModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.GIModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.GridModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.GridModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.HotReloadModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.HotReloadModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.ImageConversionModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.ImageConversionModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.IMGUIModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.IMGUIModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.InputLegacyModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.InputLegacyModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.InputModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.InputModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.JSONSerializeModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.JSONSerializeModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.LocalizationModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.LocalizationModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.NVIDIAModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.NVIDIAModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.ParticleSystemModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.ParticleSystemModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.PerformanceReportingModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.PerformanceReportingModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.Physics2DModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.Physics2DModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.PhysicsModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.PhysicsModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.ProfilerModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.ProfilerModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.PropertiesModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.PropertiesModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.ScreenCaptureModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.ScreenCaptureModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.SharedInternalsModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.SharedInternalsModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.SpriteMaskModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.SpriteMaskModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.SpriteShapeModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.SpriteShapeModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.StreamingModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.StreamingModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.SubstanceModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.SubstanceModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.SubsystemsModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.SubsystemsModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.TerrainModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.TerrainModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.TerrainPhysicsModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.TerrainPhysicsModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.TextCoreFontEngineModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.TextCoreFontEngineModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.TextCoreTextEngineModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.TextCoreTextEngineModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.TextRenderingModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.TextRenderingModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.TilemapModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.TilemapModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.TLSModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.TLSModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UI">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.UI.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UIElementsModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.UIElementsModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UIModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.UIModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UmbraModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.UmbraModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UnityAnalyticsCommonModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.UnityAnalyticsCommonModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UnityAnalyticsModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.UnityAnalyticsModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UnityConnectModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.UnityConnectModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UnityCurlModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.UnityCurlModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UnityTestProtocolModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.UnityTestProtocolModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UnityWebRequestAssetBundleModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UnityWebRequestAudioModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UnityWebRequestModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.UnityWebRequestModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UnityWebRequestTextureModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UnityWebRequestWWWModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.VehiclesModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.VehiclesModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.VFXModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.VFXModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.VideoModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.VideoModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.VirtualTexturingModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.VirtualTexturingModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.VRModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.VRModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.WindModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.WindModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.XRModule">
+			<HintPath>$(Schedule1MonoManagedDir)\UnityEngine.XRModule.dll</HintPath>
+		</Reference>
+		<Reference Include="VisualDesignCafe.Nature">
+			<HintPath>$(Schedule1MonoManagedDir)\VisualDesignCafe.Nature.dll</HintPath>
+		</Reference>
+		<Reference Include="VisualDesignCafe.Packages">
+			<HintPath>$(Schedule1MonoManagedDir)\VisualDesignCafe.Packages.dll</HintPath>
+		</Reference>
+		<Reference Include="VisualDesignCafe.ShaderX">
+			<HintPath>$(Schedule1MonoManagedDir)\VisualDesignCafe.ShaderX.dll</HintPath>
+		</Reference>
+		<Reference Include="MelonLoader">
+			<HintPath>$(Schedule1MonoMelonLoaderNet35Dir)\MelonLoader.dll</HintPath>
+		</Reference>
+		<Reference Include="0Harmony">
+			<HintPath>$(Schedule1MonoMelonLoaderNet35Dir)\0Harmony.dll</HintPath>
+		</Reference>
+
+	</ItemGroup>
+
+	<PropertyGroup>
+		<AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+		<EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Include="Mod.cs" />
 	</ItemGroup>
 	
 	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
