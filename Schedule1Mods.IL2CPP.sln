@@ -1,9 +1,9 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35806.99 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spood.IL2CPP.LargerTrashRadius", "Spood.IL2CPP.LargerTrashRadius\Spood.IL2CPP.LargerTrashRadius.csproj", "{A146026E-9D61-49CD-AFB0-0FDDCA7D7010}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spood.IL2CPP.LargerTrashRadius", "Spood.IL2CPP.LargerTrashRadius\Spood.IL2CPP.LargerTrashRadius\Spood.IL2CPP.LargerTrashRadius.csproj", "{A146026E-9D61-49CD-AFB0-0FDDCA7D7010}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +20,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {8DCE5208-CFEA-4471-B5DF-71B3DB223B72}
+		SolutionGuid = {81A7BBD4-5A8B-4A4A-9E33-759158C52D39}
 	EndGlobalSection
 EndGlobal
