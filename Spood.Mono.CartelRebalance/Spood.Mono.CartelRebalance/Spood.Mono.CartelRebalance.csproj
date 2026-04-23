@@ -3,13 +3,13 @@
 		<TargetFramework>netstandard2.1</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>disable</Nullable>
-		<RootNamespace>Spood.Mono.PickyCustomers</RootNamespace>
+		<RootNamespace>Spood.Mono.CartelRebalance</RootNamespace>
 		<LangVersion>default</LangVersion>
 		<IsPackable>false</IsPackable>
 		<AssemblyVersion>1.0.0.0</AssemblyVersion>
 		<FileVersion>1.0.0.0</FileVersion>
 		<NeutralLanguage>en-US</NeutralLanguage>
-		<AssemblyName>Spood.Mono.PickyCustomers</AssemblyName>
+		<AssemblyName>Spood.Mono.CartelRebalance</AssemblyName>
 		<LangVersion>latest</LangVersion>
 		<ImplicitUsings>enable</ImplicitUsings>
 	</PropertyGroup>
@@ -35,9 +35,6 @@
 		</Reference>
 		<Reference Include="Assembly-CSharp">
 			<HintPath>$(Schedule1MonoManagedDir)\Assembly-CSharp.dll</HintPath>
-		</Reference>
-		<Reference Include="ScheduleOne.Core">
-			<HintPath>$(Schedule1MonoManagedDir)\ScheduleOne.Core.dll</HintPath>
 		</Reference>
 		<Reference Include="AstarPathfindingProject">
 			<HintPath>$(Schedule1MonoManagedDir)\AstarPathfindingProject.dll</HintPath>
@@ -474,15 +471,10 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<Compile Include="Customer.cs" />
-		<Compile Include="GetProductEnjoymentPatch.cs" />
-		<Compile Include="GetSampleSucessPatch.cs" />
 		<Compile Include="Mod.cs" />
-		<Compile Include="PreferenceExtensions.cs" />
 	</ItemGroup>
 	
 	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
 		<Exec Command="COPY &quot;$(TargetPath)&quot; &quot;$(Schedule1MonoModsDir)&quot;" />
 	</Target>
 </Project>
-

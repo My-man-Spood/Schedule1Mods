@@ -4,3 +4,7 @@ schedule1monodumpassembly/
 .vs/
 
 Directory.Build.props
+
+bin/
+
+obj/
